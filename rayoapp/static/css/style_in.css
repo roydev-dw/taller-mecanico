@@ -1,0 +1,103 @@
+/********************* MEDIA QUERIES ***********************/
+
+@media (max-width:992px) {
+
+    .carousel-item {
+        height: 400px !important;
+        object-fit: cover;
+    }
+
+    header {
+        background-color: #3a83f0;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .titulo img {
+        height: 300px !important;
+        width: 300px !important;
+        object-fit: cover;
+        background-image: linear-gradient(to bottom right, #3a83f0, #ff1a1a) !important;
+    }
+
+    .titulo hr {
+        width: 280px;
+        height: 2px;
+        margin: auto;
+        border: none;
+        border-radius: 2px;
+        background-color: #ff1a1a;
+        opacity: 100%;
+    }
+
+    .ImgLogo {
+        margin-left: 2%;
+        width: 45px;
+        align-items: center;
+    }
+
+    #Rayo {
+        display: none;
+    }
+}
+
+
+.c-item {
+    height: 500px;
+}
+
+.c-img {
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4);
+}
+
+.btn {
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.tamaño-font h4 {
+    font-weight: 700 !important;
+    font-size: 30px !important;
+}
+
+.tamaño-font p {
+    font-weight: 300 !important;
+    font-size: 22px !important;
+}
+
+
+/*****************TARJETAS MECANICOS********************/
+
+
+.img-card {
+    height: 300px !important;
+    object-fit: cover;
+    filter: brightness(0.8);
+    border-bottom: 2px #ff1a1a !important;
+}
+
+.img-card {
+    border-radius: 5%;
+}
+
+.card-mecanico {
+    border-radius: 5%;
+    text-align: center;
+    align-items: center;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    cursor: default;
+    transition: all 400ms ease;
+}
+
+.card-mecanico:hover {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3%);
+}
+
+.bot-stl2 {
+    display: block;
+}

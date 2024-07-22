@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Overlock:ital,wght@0,400;0,900;1,400;1,900&family=Poly:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+
+/**************** BARRA DE NAVEGACIÓN ***************/
+
+
+.fondo-login {
+    background-image: linear-gradient(to bottom right, #3a83f0, #ff1a1a) !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+
+header {
+    background-color: #3a83f0;
+    height: auto;
+    text-align: center;
+}
+
+.margen {
+    margin-right: 5%;
+}
+
+.buscar-font {
+    font-family: 'M PLUS Rounded 1c', sans-serif !important;
+    font-weight: 300;
+    font-size: 18px;
+    max-height: 40px;
+    margin-top: 6px;
+
+}
+
+.nav-link {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    color: #ffffff;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.nav-link:hover {
+    color: #ff1a1a;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+#Rayo {
+    font-family: 'Overlock', cursive;
+    font-weight: 900;
+    font-size: 30px;
+    color: #ffffff;
+    margin-left: 20px;
+    margin-bottom: 3px;
+}
+
+.ImgLogo {
+    margin-left: 5%;
+    width: 65px;
+    align-items: center;
+}
+
+.navbar-toggler {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.bot-stl {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    margin-top: 6px !important;
+    background-color: #ff1a1a;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffffff;
+    height: 40px;
+}
+
+.bot-stl:hover {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 0px 3px #ff1a1a inset;
+    /*border: 3px solid #ff1a1a inset;*/
+    color: #ff1a1a;
+}
+
+.bot-stl:active {
+    background-color: #3a83f0 !important;
+    border: none;
+    box-shadow: none;
+    transition: 30ms;
+    color: #fff !important;
+}
+
+.bot-stl:hover {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 0px 3px #ff1a1a inset;
+    /*border: 3px solid #ff1a1a inset;*/
+    color: #ff1a1a;
+}
+
+.bot-stl:active {
+    background-color: #3a83f0 !important;
+    border: none;
+    box-shadow: none;
+    transition: 30ms;
+    color: #fff !important;
+}
+
+
+
+/*********************** CONTENIDO *************************/
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff !important;
+    margin: auto;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 1em;
+    padding: 3.5em 1.5em;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.form_titulo {
+    text-align: center;
+    font-weight: 700;
+    color: black;
+    padding-bottom: 6%;
+    text-transform: uppercase;
+}
+
+.contenedor_form {
+    width: 100%;
+    display: grid;
+    gap: 0.5em;
+    grid-auto-columns: 100%;
+}
+
+.form_input {
+    width: 100%;
+    font-family: inherit;
+    padding: 3px 3px;
+    outline: none;
+    border: none;
+    border: 2px solid #3a83f0;
+    border-radius: 5px;
+}
+
+.form_cta {
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 22px;
+    background-color: #ff1a1a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 3px 3px;
+    cursor: pointer;
+    margin: 2%;
+    margin-left: 0;
+}
+
+.form_input--message {
+    resize: none;
+    padding: 5px 5px;
+}
+
+.invalid {
+    border: solid 1px #ff1a1a;
+    box-shadow: 0 0 8px #ff1a1a;
+}
+
+.error {
+    color: #ff1a1a;
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+    font-style: italic;
+}
+
+
+/******************* FOOTER *******************/
+
+
+.cen-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 150px;
+    background-color: #3a83f0;
+    color: #fff;
+    font-weight: 300;
+    font-size: 18px;
+    text-align: center;
+}
+
+.cen-footer p {
+    margin: 0;
+}

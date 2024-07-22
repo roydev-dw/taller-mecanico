@@ -1,0 +1,63 @@
+{% extends 'base.html' %} <!-- Secargar el archivo base.html -->
+{% load static %} <!-- Se cargan los archivos estaticos css, js -->
+{% block titulo %} Descripción mecánicos {% endblock %}
+{% block contenido %}
+
+<div class="container-fluid contenedor-detalles">
+  <div class="container-fluid d-flex justify-content-end contenedor-boton">
+    {% if user.is_authenticated %}
+    <a href="{% url 'creardetalle' %}" class="btn boton-agregar-descripcion">Agregar Descripción</a>
+    {% endif %}
+  </div>
+  <div class="row contenedor-tarjeta-detalle">
+    {% for detalle in detalles %}
+    <div class="col-sm-12 col-xl-6">
+      <div class="card w100">
+        <img src="{{ detalle.imagen.url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <hr>
+          <h1 class="card-title">{{ detalle.nombre_encabezado }}</h1>
+          <h2 class="card-title">{{ detalle.expertiz_encabezado }}</h2><br>
+          <hr>
+          <div class="card-text">
+            <h4>Datos Personales:</h4>
+            <p>Nombre: {{ detalle.nombre }}<br>Área de especialización: {{ detalle.especialidad }}<br>Estudios universitarios: {{ detalle.titulos }}<br>Años de experiencia: {{ detalle.agnos_exp }}</p>
+          </div>
+          <div class="card-text resumen">
+            <h4>Resumen profesional:</h4>
+            <p>{{ detalle.resumen_pro }}</p>
+            <h4>Educación:</h4>
+            <p>{{ detalle.resumen_edu }}</p>
+            <h4>Experiencia profesional:</h4>
+            <p>{{ detalle.resumen_exp }}</p>
+            <div>
+              <ul>
+                <h4>{{ detalle.trabajo_uno }}</h4>
+                <ul>
+                  <li>{{ detalle.desc_tra_uno }}</li>
+                </ul>
+                <h4>{{ detalle.trabajo_dos }}</h4>
+                <ul>
+                  <li>{{ detalle.desc_tra_dos }}</li>
+                </ul>
+                <h4>{{ detalle.trabajo_tres }}</h4>
+                <ul>
+                  <li>{{ detalle.desc_tra_tres }}</li>
+                </ul>
+              </ul>
+            </div>
+          </div>
+          <div class="container card-footer m-0 p-0 bg-white contenedor-botones-detalle">
+            {% if user.is_authenticated %}
+            <a name="" id="" href="{% url 'editardet' detalle.id %}" class="btn boton-info" role="button">Editar</a>
+            <a name="" id="" href="{% url 'eliminardet' detalle.id %}" class="btn boton-danger" role="button">Borrar</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

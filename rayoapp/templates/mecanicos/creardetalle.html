@@ -1,0 +1,29 @@
+{% extends 'base.html' %} <!-- Secargar el archivo base.html -->
+{% load static %} <!-- Se cargan los archivos estaticos css, js -->
+{% block titulo %} Agregar detalle mecánico {% endblock %}
+{% block contenido %}
+
+<div class="container contenedor-agregar-detalle">
+  <form enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    {% for campod in formulario %}
+    <div class="mb-3 contenedor-input">
+      <label for="" class="form-label">{{ campod.label }}:</label>
+      {% if campod.field.widget.input_type == 'file' and campod.value %}
+      <img src="{{MEDIA_URL}}/imagenes/{{ campod.value }}" width="100" alt="" srcset="">
+      {% endif %}
+      <input type="{{ campod.field.widget.input_type }}" class="form-control" name="{{ campod.name }}" id="" aria-describedby="helpId" value="{{ campod.value | default:'' }}">
+    </div>
+    <div class="col-6 help-text">
+      {{ campod.errors }}
+    </div>
+    {% endfor %}
+    <div class="contenedor-botones" >
+      <input class="btn boton-enviar-info" type="submit" value="Enviar Información">
+      <a href="{% url 'detalle_mecanico' %}" class="btn boton-cancelar ">Cancelar</a>
+    </div>
+  </form>
+</div>
+<br>
+
+{% endblock %}

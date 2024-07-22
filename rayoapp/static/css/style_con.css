@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Overlock:ital,wght@0,400;0,900;1,400;1,900&family=Poly:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;900&display=swap');
+
+/******************* CONTENIDO ******************/
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff !important;
+    margin: auto;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 1em;
+    padding: 3.5em 1.5em;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.form_titulo {
+    text-align: center;
+    font-weight: 700;
+    color: black;
+    padding-bottom: 6%;
+    text-transform: uppercase;
+}
+
+.contenedor_form {
+    width: 100%;
+    display: grid;
+    gap: 0.5em;
+    grid-auto-columns: 100%;
+}
+
+.form_input {
+    width: 100%;
+    font-family: inherit;
+    padding: 3px 3px;
+    outline: none;
+    border: none;
+    border: 2px solid #3a83f0;
+    border-radius: 5px;
+}
+
+.form_cta {
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 22px;
+    text-transform: uppercase;
+    background-color: #ff1a1a !important;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 3px 3px;
+    cursor: pointer;
+
+}
+
+.form_input--message {
+    resize: none;
+    padding: 5px 5px;
+}
+
+.invalid {
+    border: solid 1px #ff1a1a !important;
+    box-shadow: 0 0 8px #ff1a1a !important;
+}
+
+.error {
+    color: #ff1a1a !important;
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+    font-style: italic;
+}

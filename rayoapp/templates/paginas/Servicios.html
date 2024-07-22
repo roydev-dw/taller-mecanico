@@ -1,0 +1,64 @@
+{% extends 'base.html' %} <!-- Secargar el archivo base.html -->
+{% load static %} <!-- Se cargan los archivos estaticos css, js -->
+{% block titulo %} Servicios {% endblock %}
+{% block contenido %}
+
+<!-- CARRUSEL -->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+      aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active c-item" data-bs-interval="3000">
+      <img src="{% static 'img/Aston-Martin.jpg' %}" class="d-block w-100 c-img" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h4>Cajas de cambios</h4>
+        <p>Revisión y Mantenimiento a Caja de Cambio de un Emblemático “Aston Martin del 61”. Este trabajo incluyó la inspección y ajustes de las siguientes partes: RPM del motor - Interruptor neutral - Moduladores - Enlace del acelerador - Juntas en U - Soportes de transmisión - Controles electrónicos - Retención de líquidos.</p>
+      </div>
+    </div>
+    <div class="carousel-item c-item" data-bs-interval="3000">
+      <img src="{% static 'img/Porsche.jpg' %}" class="d-block w-100 c-img" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h4>Suspensión y Dirección</h4>
+        <p>Trabajo de Suspensión y Dirección "Porsche Carrera GT". Se instala un Kit de arbustos de suspensión Powerflex, además de un set de amortiguadores traseros deportivo Koni.</p>
+      </div>
+    </div>
+    <div class="carousel-item c-item" data-bs-interval="3000">
+      <img src="{% static 'img/Camaro1.jpg' %}" class="d-block w-100 c-img #navbarSupportedContent" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h4>Electrónica</h4>
+        <p>Cambio de Ramal Eléctrico a un "Chevrolet Camaro SS". Se realiza el cambio de Ramal Cableado Interruptor - Relay - fusible Para Neblineros - Focos e Intermitentes.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- CONTENIDO -->
+
+<div class="container-fluid fondo_servicio">
+  <div class="container contenededor-titulo">
+    <h1>Nuestros Trabajos</h1>
+  </div>
+  <!-- GALERIA DE IMAGENES -->
+  <section class="container-fluid seccion-galeria">
+    <img class="imagen-galeria" src="{% static 'img/Aston-Martin.jpg' %}" alt="">
+    <img class="imagen-galeria" src="{% static 'img/Camaro1.jpg' %}" alt="">
+    <img class="imagen-galeria" src="{% static 'img/Rep2.jpg' %}" alt="">
+    <img class="imagen-galeria" src="{% static 'img/Rep3.jpg' %}" alt="">
+    <img class="imagen-galeria" src="{% static 'img/Rep4.jpg' %}" alt="">
+    <img class="imagen-galeria" src="{% static 'img/Rep1.jpg' %}" alt="">
+  </section>
+</div>
+
+{% endblock %}
