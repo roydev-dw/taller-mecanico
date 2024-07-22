@@ -1,0 +1,32 @@
+{% extends 'base.html' %} <!-- SE CARGA ARCHIVO BASE -->
+{% load static %} <!-- SE CARGA CARPETA STATIC -->
+{% block titulo %} Agregar {% endblock %}
+{% block contenido %}
+
+
+<br>
+<div class="container">
+    <form enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        {% for campod in formulario %}
+        <div class="mb-3">
+            <label for="" class="form-label">{{ campod.label }}:</label>
+            {% if campod.field.widget.input_type == 'file' and campod.value %}
+            <img src="{{MEDIA_URL}}/imagenes/{{ campod.value }}" width="100" alt="" srcset="">
+            {% endif %}
+            <input type="{{ campod.field.widget.input_type }}" class="form-control" name="{{ campod.name }}" id="" aria-describedby="helpId"
+                value="{{ campod.value | default:'' }}">
+        </div>
+        <div class="col-6 help-text">
+            {{ campod.errors }}
+        </div>
+        {% endfor %}
+        <input class="btn btn-success" type="submit" value="Enviar Información">
+        <a href="{% url 'detalle_mecanico' %}" class="btn btn-primary ">Cancelar</a>
+    </form>
+</div>
+<br>
+
+
+
+{% endblock %}

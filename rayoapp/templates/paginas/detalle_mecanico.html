@@ -1,0 +1,80 @@
+{% extends 'base.html' %} <!-- SE CARGA ARCHIVO BASE -->
+{% load static %} <!-- SE CARGA CARPETA STATIC -->
+{% block titulo %} Inicio {% endblock %}
+{% block extra_css %}
+<!-- <link rel="stylesheet" type="text/css" href="{% static 'css/style_mec.css' %}"> -->
+{% endblock %}
+{% block contenido %}
+
+<br>
+<br>
+<br>
+<div class="container-fluid d-flex justify-content-end">
+    {% if user.is_authenticated %}
+    <a href="{% url 'creardetalle' %}" class="btn btn-success me-4">Agregar Descripción</a>
+    {% endif %}
+</div>
+<div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 g-5 m-2">
+    {% for detalle in detalles %}
+    <div class="col">
+        <div class="card card-mecanico rounded-5" style="background-color: rgb(255, 255, 255);">
+            <img src="{{ detalle.imagen.url }}" class="card-img-top img-card img-mecanico rounded-5" alt="...">
+            <div class="card-body">
+                <hr class="border-0" style="height: 5px; border-radius: 5px; background-color: #ff1a1a; opacity: 100%;">
+                <h1 class="card-title text-black text-uppercase pt-4">{{ detalle.nombre_encabezado }}</h1>
+                <h1 class="card-title text-black text-uppercase">{{ detalle.expertiz_encabezado }}</h1><br>
+                <hr class="border-0" style="height: 5px; border-radius: 5px; background-color: #ff1a1a; opacity: 100%;">
+                <div class="card-text text-black">
+                    <h4 class="pt-4">Datos Personales:</h4><br>
+                    <!-- nombre, especialidad, estudios, experiencia -->
+                    <p>Nombre: {{ detalle.nombre }}<br>
+                        Área de especialización: {{ detalle.especialidad }}<br>
+                        Estudios universitarios: {{ detalle.titulos }}<br>
+                        Años de experiencia: {{ detalle.agnos_exp }}</p><br>
+                </div>
+                <div class="card-text text-black px-5">
+                    <h4 class="text-uppercase">Resumen profesional:</h4><br>
+                    <!-- resumen profesional -->
+                    <p>{{ detalle.resumen_pro }}</p>
+                    <br>
+                    <h4 class="text-uppercase">Educación:</h4><br>
+                    <!-- resumen educacion -->
+                    <p>{{ detalle.resumen_edu }}</p><br>
+                    <h4 class="text-uppercase">Experiencia profesional:</h4><br>
+                    <!-- resumen experiencia -->
+                    <p>{{ detalle.resumen_exp }}</p><br>
+                    <div>
+                        <ul class="list-unstyled">
+                            <!--trabajo 1-->
+                            <h5 class="text-uppercase">{{ detalle.trabajo_uno }}</h5><br>
+                            <ul class="list-unstyled">
+                                <!-- descripcion trabajo -->
+                                <li>{{ detalle.desc_tra_uno }}</li><br>
+                            </ul>
+                            <!-- trabajo 2 -->
+                            <h5 class="text-uppercase">{{ detalle.trabajo_dos }}</h5><br>
+                            <ul class="list-unstyled">
+                                <!-- descripcion trabajo -->
+                                <li>{{ detalle.desc_tra_dos }}</li><br>
+                            </ul class="list-unstyled">
+                            <!-- trabajo 3 -->
+                            <h5 class="text-uppercase">{{ detalle.trabajo_tres }}</h5><br>
+                            <ul class="list-unstyled">
+                                <!-- descripcion trabajo -->
+                                <li>{{ detalle.desc_tra_tres }}</li><br>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+                {% if user.is_authenticated %}
+                <a name="" id="" href="{% url 'editardet' detalle.id %}" class="btn btn-info" role="button">Editar</a>
+                |
+                <a name="" id="" href="{% url 'eliminardet' detalle.id %}" class="btn btn-danger" role="button">Borrar</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
