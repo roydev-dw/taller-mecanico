@@ -41,12 +41,44 @@ La aplicación implementa las operaciones básicas de **CRUD** (Crear, Leer, Act
 - **Login/Logout**: Los usuarios deben iniciar sesión para acceder a las funcionalidades de agregar, editar y eliminar mecánicos.
 - **Registro**: Permite a nuevos usuarios registrarse en el sistema.
 
+<br>
+
 ## Instalación 🛠️
 
 1. **Clona el repositorio**:
 
    ```bash
    git clone https://github.com/roydev-dw/taller-mecanico.git
+
+2. **Navega a la carpeta del proyecto**
+   ```bash
+   cd ruta/del/proyecto
+
+3. **Crea un entorno virtual**
+   ```bash
+   python -m venv env
+
+4. **Activa el entorno virtual**
+   ```bash
+   .\env\Scripts\activate
+
+5. **Navega a la ruta de las dependencias**
+   ```bash
+   cd ruta/al/archivo/requirements.txt
+
+6. **Instala las dependencias**
+   ```bash
+   pip install -r requirements.txt
+
+7. **Navega a la carpeta donde se encuentra el archivo manage.py**
+   ```bash
+   cd ruta/al/archivo/manage.py
+
+8. **Corre el servidor de desarrollo**
+   ```bash
+   python manage.py runserver
+
+<br>
 
 ## Contacto 📞
 
