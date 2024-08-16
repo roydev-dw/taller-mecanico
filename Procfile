@@ -1,0 +1,1 @@
+web: gunicorn rayoproject.wsgi --log-file -
