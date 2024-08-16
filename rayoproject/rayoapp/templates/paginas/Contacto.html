@@ -1,0 +1,44 @@
+{% extends 'base.html' %} <!-- Secargar el archivo base.html -->
+{% load static %} <!-- Se cargan los archivos estaticos css, js -->
+{% block titulo %} Contacto {% endblock %}
+{% block contenido %}
+
+<!-- FORMULARIO -->
+<form class="container formulario d-flex justify-content-center align-items-center" id="formulario" action="https://formspree.io/f/mleyejgd" method="POST">
+  {% csrf_token %}
+  <div class="contenedor-formulario">
+    <div class="contenedor-titulo d-flex justify-content-center">
+      <h1 class="titulo-formulario">Contáctanos</h1>
+    </div>
+    <div class="contenedor-etiquetas d-flex flex-column">
+      <label class="d-flex justify-content-between align-items-center etiqueta">
+        <span>Nombre:</span>
+        <input type="text" class="f-input" id="nombre" name="nombre" required>
+      </label>
+      <label class="d-flex justify-content-between jalign-items-center etiqueta">
+        <span>Apellido:</span>
+        <input type="text" class="f-input" id="apellido" name="apellido" required>
+      </label>
+      <label class="d-flex justify-content-between jalign-items-center etiqueta">
+        <span>Email:</span>
+        <input type="email" class="f-input" id="email" name="email" required>
+      </label>
+      <label class="d-flex justify-content-between align-items-center etiqueta">
+        <span>Teléfono:</span>
+        <input type="text" class="f-input" id="celular" name="celular" required>
+      </label>
+      <label class="d-flex justify-content-between align-items-center etiqueta">
+        <span>Mensaje:</span>
+        <textarea id="mensaje" name="message" required></textarea>
+      </label>
+      <div class="contenedor-terminos d-flex justify-content-between align-items-center">
+        <label class="checkbox-container">
+          <input type="checkbox" name="terminos" id="terminos" required>
+          <span>Acepta los Términos y condiciones</span>
+        </label>
+        <input class="btn-enviar" type="submit" value="Enviar">
+      </div>
+    </div>
+  </div>
+</form>
+{% endblock %}
